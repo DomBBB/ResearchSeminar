@@ -141,7 +141,7 @@ public class GetData
 			///////////////////////////////////////////
 
 			// Handle Reply
-			try (FileWriter writer = new FileWriter(securityName1.replace("/", "_") + "_" + securityName2 + "_" + securityCurrency + ".csv")) {
+			try (FileWriter writer = new FileWriter(securityName1.replace("/", "+") + "_" + securityName2 + "_" + securityCurrency + ".csv")) {
 				writer.write("name,date,PX_LAST\n"); // Write the header line
 				// BASE start
 				while (true) {
