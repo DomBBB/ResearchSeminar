@@ -129,8 +129,7 @@ public class GetData
 			Request request = refDataService.createRequest("HistoricalDataRequest");
 			request.append("securities", securityName1 + " " + securityName2);
 
-			request.append("fields", "PX_LAST");
-			request.append("fields", "CUR_MKT_CAP");
+			request.append("fields", "PX_LAST")
 
 			request.set("periodicitySelection", "DAILY");
 			request.set("startDate", "19000101");
