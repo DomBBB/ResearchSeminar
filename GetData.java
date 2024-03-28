@@ -142,7 +142,7 @@ public class GetData
 
 			// Handle Reply
 			try (FileWriter writer = new FileWriter(securityName1.replace("/", "+") + "_" + securityName2 + "_" + securityCurrency + ".csv")) {
-				writer.write("name,date,PX_LAST,CUR_MKT_CAP\n"); // Write the header line
+				writer.write("name,date,PX_LAST\n"); // Write the header line
 				// BASE start
 				while (true) {
 					Event event = session.nextEvent();
