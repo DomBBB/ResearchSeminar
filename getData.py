@@ -1,5 +1,5 @@
 ToDos:
-* Bloomberg: Price, Market Cap (to do)
+* Bloomberg: Price, Market Cap
 * Compustat: Balance Sheet Data
         Revenue/Income - Sundry (ris)
         Pretax Income (piq)
