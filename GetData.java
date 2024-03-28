@@ -130,7 +130,7 @@ public class GetData
 			request.append("securities", securityName1 + " " + securityName2);
 
 			request.append("fields", "PX_LAST");
-			request.append("fields", "MKT_CAP");
+			request.append("fields", "CUR_MKT_CAP");
 
 			request.set("periodicitySelection", "DAILY");
 			request.set("startDate", "19000101");
@@ -143,7 +143,7 @@ public class GetData
 
 			// Handle Reply
 			try (FileWriter writer = new FileWriter(securityName1.replace("/", "+") + "_" + securityName2 + "_" + securityCurrency + ".csv")) {
-				writer.write("name,date,PX_LAST,MKT_CAP\n"); // Write the header line
+				writer.write("name,date,PX_LAST,CUR_MKT_CAP\n"); // Write the header line
 				// BASE start
 				while (true) {
 					Event event = session.nextEvent();
