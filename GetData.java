@@ -129,8 +129,8 @@ public class GetData
 			Request request = refDataService.createRequest("HistoricalDataRequest");
 			request.append("securities", securityName1 + " " + securityName2);
 
-			request.append("fields", "PX_LAST");
-			// request.append("fields", "CUR_MKT_CAP");
+			//request.append("fields", "PX_LAST");
+			request.append("fields", "CUR_MKT_CAP");
 
 			request.set("periodicitySelection", "DAILY");
 			request.set("startDate", "19000101");
@@ -142,8 +142,8 @@ public class GetData
 			///////////////////////////////////////////
 
 			// Handle Reply
-			try (FileWriter writer = new FileWriter(securityName1.replace("/", "+") + "_" + securityName2 + "_" + securityCurrency + "_PXLAST" + ".csv")) {
-				writer.write("name,date,PX_LAST\n"); // Write the header line
+			try (FileWriter writer = new FileWriter(securityName1.replace("/", "+") + "_" + securityName2 + "_" + securityCurrency + "_CURMKTCAP" + ".csv")) {
+				writer.write("name,date,CUR_MKT_CAP\n"); // Write the header line
 				// BASE start
 				while (true) {
 					Event event = session.nextEvent();
@@ -173,9 +173,9 @@ public class GetData
            	for (int j = 0; j < fieldDataArray.numValues(); ++j) {
                	Element fieldData = fieldDataArray.getValueAsElement(j);
                	String date = fieldData.getElementAsString("date");
-               	double pxLast = fieldData.getElementAsFloat64("PX_LAST");
+		double varInterest = fieldData.getElementAsFloat64("CUR_MKT_CAP");
                	// Write to CSV
-               	writer.write(name + "," + date + "," + pxLast + "\n");
+               	writer.write(name + "," + date + "," + varInterest + "\n");
         }
 		System.out.println("Success");
     }
