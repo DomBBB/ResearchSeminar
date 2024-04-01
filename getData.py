@@ -23,11 +23,11 @@ company_subset = companies[["GVKEY (Compustat)"]]
 for x, y in company_subset.iterrows():
 
     quarterly_data = conn.raw_sql(f"""select gvkey, datadate, risq, piq, atq, ltq, teqq, iptiq, bctq
-                            from comp_global.g_fundq
+                            from comp_global_daily.g_fundq
                             where gvkey = '{y[0]}'""")
 
     annual_data = conn.raw_sql(f"""select gvkey, datadate, ris, pi, at, lt, teq, ipti, bct
-                            from comp_global.g_funda
+                            from comp_global_daily.g_funda
                             where gvkey = '{y[0]}'""")
 
     quarterly_data_all = pd.concat([quarterly_data_all, quarterly_data], ignore_index=True)
