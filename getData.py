@@ -28,7 +28,7 @@ quarterly_metadata = ["gvkey", "datadate", "curcdq", "conm", "isin", "fic", "loc
 annual_not_needed = ["indfmt", "datafmt", "consol", "popsrc", "acctstd", "acqmeth", "bspr", "compst", "final", "fyear",
                         "ismod", "pddur", "scf", "src", "stalt", "upd", "fdate", "pdate", "sedol", "exchg", "fyr",
                         "iid", "costat", "naicsh", "sich", "rank", "au", "auop", "ajexi", "cshoi", "cshpria", "epsexcon",
-                        "epsincon", "epsexnc", "epsinnc", "icapi", "nicon", "ninc", "pv", "tstkni"]
+                        "epsincon", "epsexnc", "epsinnc", "icapi", "ninc", "pv", "tstkni"]
 annual_metadata = ["gvkey", "datadate", "curcd", "curcdi", "conm", "isin", "fic", "loc"]
 
 quarterly_data_all = pd.DataFrame()
