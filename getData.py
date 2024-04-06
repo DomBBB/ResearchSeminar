@@ -39,6 +39,9 @@ company_subset = companies[["GVKEY (Compustat)", "Ticker (Bloomberg)"]]
 
 for x, y in company_subset.iterrows():
 
+    if y[1] == "AV/ LN Equity":
+        y[1] = "AV+ LN Equity"
+
     quarterly_data = conn.raw_sql(f"""select *
                             from comp_global_daily.g_fundq
                             where gvkey = '{y[0]}' AND consol='C' AND datafmt='HIST_STD' AND popsrc='I'""")
