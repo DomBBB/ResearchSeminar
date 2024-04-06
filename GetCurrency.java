@@ -65,7 +65,7 @@ public class GetCurrency
     		new String[]{"ITLEUR BGN", "EUR", "Curncy"},
     		new String[]{"CHFEUR BGN", "EUR", "Curncy"},
     		new String[]{"USDEUR BGN", "EUR", "Curncy"},
-    		new String[]{"PLNEUR BGN", "CHF", "Curncy"},
+    		new String[]{"PLNEUR BGN", "EUR", "Curncy"},
             new String[]{"NOKEUR BGN", "EUR", "Curncy"},
     		new String[]{"DKKEUR BGN", "EUR", "Curncy"},
             new String[]{"NLGEUR BGN", "EUR", "Curncy"},
