@@ -23,9 +23,8 @@ df = pd.DataFrame(list(zip(gv_keys, ar)), columns=["gvkey", "OUTCOME"])
 merged_df = pd.merge(filtered_data, df, how="left", on="gvkey")
 merged_df = merged_df.drop(columns="gvkey")
 merged_df = merged_df.dropna(subset=["OUTCOME"])
-merged_df
 
-merged_df["OUTCOME_LABEL"] = np.where(merged_df["OUTCOME"] >= -58, 0, 1)
+merged_df["OUTCOME_LABEL"] = np.where(merged_df["OUTCOME"] >= -57, 0, 1)
 
 from sklearn.model_selection import LeaveOneOut, cross_val_score
 X = merged_df.drop("OUTCOME_LABEL", axis=1)
@@ -69,7 +68,7 @@ svm_cv_scores = cross_val_score(svm_clf, X, y, cv=loo)
 print(f'SVM Cross-validation scores: {svm_cv_scores.mean()}')
 
 from sklearn.neighbors import KNeighborsClassifier
-knn_clf = KNeighborsClassifier(n_neighbors=9) # use sqrt(n)
+knn_clf = KNeighborsClassifier(n_neighbors=7) # use sqrt(n)
 knn_cv_scores = cross_val_score(knn_clf, X, y, cv=loo)
 print(f'KNN Cross-validation scores: {knn_cv_scores.mean()}')
 
