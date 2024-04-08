@@ -36,7 +36,6 @@ annual_data_all = pd.DataFrame()
 
 companies = pd.read_csv("Overview Companies.csv", sep=";", converters={"GVKEY (Compustat)": str})
 company_subset = companies[["GVKEY (Compustat)", "Ticker (Bloomberg)"]]
-
 for x, y in company_subset.iterrows():
 
     if y[1] == "AV/ LN Equity":
@@ -107,9 +106,8 @@ for x, y in company_subset.iterrows():
     quarterly_data_all = pd.concat([quarterly_data_all, quarterly_data], ignore_index=True)
     annual_data_all = pd.concat([annual_data_all, annual_data], ignore_index=True)
 
-quarterly_data_all.to_csv("full_quarterly_data_all.csv", index=False)
-annual_data_all.to_csv("full_annual_data_all.csv", index=False)
-
-
+    if y[0] == '036120':
+        print(annual_data)
+        print(annual_data_all)
 
 conn.close()
