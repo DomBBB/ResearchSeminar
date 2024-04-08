@@ -106,8 +106,7 @@ for x, y in company_subset.iterrows():
     quarterly_data_all = pd.concat([quarterly_data_all, quarterly_data], ignore_index=True)
     annual_data_all = pd.concat([annual_data_all, annual_data], ignore_index=True)
 
-    if y[0] == '036120':
-        print(annual_data)
-        print(annual_data_all)
+quarterly_data_all.to_csv("full_quarterly_data_all.csv", index=False)
+annual_data_all.to_csv("full_annual_data_all.csv", index=False)
 
 conn.close()
